@@ -14,23 +14,57 @@ import matplotlib.pyplot as plt
 #%% 1) Pythagorean theorem
 
 def pythagorean_theorem(a, b, c):
+    """
+
+    Parameters
+    ----------
+    a : TYPE string
+        length of a, if ? the length is unknown.
+    b : TYPE string
+        length of b, if ? the length is unknown.
+    c : TYPE string
+        length of c, if ? the length is unknown.
+
+    Returns
+    -------
+    unknown : TYPE float
+        the unknown length.
+
+    """
     unknown = 0
     
     if a == "?":
-        unknown = math.sqrt(int(c)**2 + int(b)**2)
+        unknown = math.sqrt(float(c)**2 + float(b)**2)
     elif b == "?":
-        unknown = math.sqrt(int(c)**2 + int(a)**2)
+        unknown = math.sqrt(float(c)**2 + float(a)**2)
     else:
-        unknown = math.sqrt(int(a)**2 + int(b)**2)
+        unknown = math.sqrt(float(a)**2 + float(b)**2)
     return unknown
 
-#%% test pythagorean_theorem
+#%% Taking user input
 
-print(pythagorean_theorem("4", "2", "?"))
+def use_pythagoras():
+    print("Enter the lengths you know and ? (question-mark) for the length you don't know")
+    c = input("What is the length of the hypotenuse? ")
+    a = input("What is the lenght of one of the sides? ")
+    b = input("What is the length of the other side? ")
+    print(pythagorean_theorem(a, b, c))
 
 #%% 2) Median value
 
 def median(L):
+    """
+
+    Parameters
+    ----------
+    L : TYPE list
+        a list of numbers.
+
+    Returns
+    -------
+    TYPE float
+        the midmost element of the list L or mean of the two midmost elements.
+    """
     L.sort()
     middle = len(L)/2
     if len(L) % 2 != 0:
@@ -47,6 +81,18 @@ print(median(L))
 #%% 3a) Unique list items (removing duplicates from list)
 
 def unique(L):
+    """
+
+    Parameters
+    ----------
+    L : TYPE list
+        a list of items.
+
+    Returns
+    -------
+    unique : TYPE list
+        Every unique value in list L.
+    """
     unique = []
     for o in L:
         if o not in unique:
@@ -56,6 +102,18 @@ def unique(L):
 #%% 3b) Unique list items 2 (returning only the unique elements)
 
 def unique2(L):
+    """
+
+    Parameters
+    ----------
+    L : TYPE list
+        a list of items.
+
+    Returns
+    -------
+    unique : TYPE list
+        Every unique value in list L that occurs only once.
+    """
     unique = []
     for o in L:
         if o in unique:
@@ -75,6 +133,18 @@ print(unique2(L))
 #%% 4) Character count
 
 def characters(textfile):
+    """
+    
+    Parameters
+    ----------
+    textfile : TYPE string
+        the file name of the text to be used.
+
+    Prints
+    -------
+    Each character used along with the count of this character
+
+    """
     characters = {}
     lines = open(textfile).read().split("\n")
     for line in lines:
@@ -93,6 +163,19 @@ print(characters("raven.txt"))
 #%% Helper function load_text
 
 def load_text(path):
+    """
+
+    Parameters
+    ----------
+    path : TYPE string
+        path to a text-file.
+
+    Returns
+    -------
+    lines : TYPE list
+        list of lines in text-file.
+
+    """
     file = open(path, "r", encoding = "UTF-8")
     lines = []
     for line in file:
