@@ -34,9 +34,9 @@ def pythagorean_theorem(a, b, c):
     unknown = 0
     
     if a == "?":
-        unknown = math.sqrt(float(c)**2 + float(b)**2)
+        unknown = math.sqrt(float(c)**2 - float(b)**2)
     elif b == "?":
-        unknown = math.sqrt(float(c)**2 + float(a)**2)
+        unknown = math.sqrt(float(c)**2 - float(a)**2)
     else:
         unknown = math.sqrt(float(a)**2 + float(b)**2)
     return unknown
