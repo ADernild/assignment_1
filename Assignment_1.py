@@ -173,7 +173,7 @@ def load_text(path):
     Returns
     -------
     lines : TYPE list
-        list of lines in text-file.
+        returns a list of the lines in text-file.
 
     """
     file = open(path, "r", encoding = "UTF-8")
