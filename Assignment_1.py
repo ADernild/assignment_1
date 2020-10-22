@@ -188,6 +188,18 @@ def load_text(path):
 #%% 5) Word Frequency
 
 def count(term):
+    """
+
+    Parameters
+    ----------
+    term : TYPE string
+    Some word to count and visualize.
+
+    Returns
+    -------
+    Saves a line chart displaying the frequency of term in each chapter of The Genesis Bible.
+
+    """
     dir = 'genesis'
     files = sorted(os.listdir(dir))
     frequencies = []
@@ -202,7 +214,7 @@ def count(term):
                     word_counter += 1
         frequencies.append(word_counter)
     fig = plt.figure(figsize=(15, 10)) 
-    plt.plot(list(range(1, len(frequencies) + 1)), frequencies)
+    plt.plot(list(range(1, len(frequencies) + 1)), list(frequencies))
     fig.suptitle('Frequency of "' + term + '" in each chapter of genesis', fontsize=25)
     plt.xlabel('Chapters', fontsize=20)
     plt.ylabel('Frequency', fontsize=20)
